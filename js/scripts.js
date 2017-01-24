@@ -2,7 +2,11 @@
 var Customer = function(name, accountBalance) {
   this.name = name;
   this.accountBalance = accountBalance;
-}
+};
+
+Customer.prototype.depositTransaction = function(amount) {
+  this.accountBalance += amount;
+};
 
 /// copied from http://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-money-in-javascript ///
 Number.prototype.formatMoney = function(c, d, t){
@@ -24,8 +28,12 @@ $(document).ready(function() {
     event.preventDefault();
     var customerName = $("input#customerName").val();
     var openingBalance = parseFloat($("input#openingBalance").val());
-
+    var depositAmount = parseFloat($("input#depositAmount").val());
     var newCustomer =  new Customer(customerName,openingBalance);
+
+    if (depositAmount) {
+      newCustomer.depositTransaction(depositAmount);
+    }
 
     $("input#accountBalance").val(newCustomer.accountBalance.formatMoney());
 

@@ -26,10 +26,14 @@
           <!-- shadeBox -->
           <div class="col-md-5 shadeBox">
             <h4>Deposit or withdraw funds:</h4>
-
-          </div>
-
-        </div>
+            <div class="form-group">
+              <label for="depositAmount">Deposit Amount: </label>
+              <input type="text" id="depositAmount" class="form-control">
+              <label for="withdrawalAmount">Withdrawal Amount:</label>
+              <input type="text" id="withdrawalAmount" class="form-control">
+            </div>  <!-- form div -->
+          </div> <!-- End col -->
+        </div> <!-- End row -->
 
         <div class="row">
           <div class="col-md-10 shadeBox">
@@ -37,10 +41,9 @@
             <div class="form-group">
               <label for="accountBalance"> Account Balance:</label>
               <input type="button" id="accountBalance" class="form-control" readonly>
-            </div>
-            <!-- account balance -->
-          </div>
-        </div>
+            </div><!-- account balance -->
+          </div><!-- form group -->
+        </div><!-- End col -->
 
         <button type="submit" class="btn">Submit</button>
       </form>
