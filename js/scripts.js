@@ -1,4 +1,22 @@
 //business logic
+var Ledger = function() {
+  this.customers = [];
+}
+
+Ledger.prototype.findCustomerByName = function(name) {
+  for (var i = 0; i < this.customers.length; i++) {
+    if (this.customers[i].name === name) {
+      return this.customers[i];
+    }
+  }
+}
+
+Ledger.prototype.addCustomer = function(customer) {
+  this.customers.push(customer);
+}
+
+var ledger = new Ledger();
+
 var Customer = function(name, accountBalance) {
   this.name = name;
   this.accountBalance = accountBalance;
@@ -6,6 +24,10 @@ var Customer = function(name, accountBalance) {
 
 Customer.prototype.depositTransaction = function(amount) {
   this.accountBalance += amount;
+};
+
+Customer.prototype.withdrawalTransaction = function(amount) {
+  this.accountBalance -= amount;
 };
 
 /// copied from http://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-money-in-javascript ///
@@ -29,13 +51,23 @@ $(document).ready(function() {
     var customerName = $("input#customerName").val();
     var openingBalance = parseFloat($("input#openingBalance").val());
     var depositAmount = parseFloat($("input#depositAmount").val());
-    var newCustomer =  new Customer(customerName,openingBalance);
+    var withdrawalAmount = parseFloat($("input#withdrawalAmount").val());
 
-    if (depositAmount) {
-      newCustomer.depositTransaction(depositAmount);
+    var customer = ledger.findCustomerByName(customerName);
+    if (!customer) {
+      customer = new Customer(customerName, openingBalance);
+      ledger.addCustomer(customer);
     }
 
-    $("input#accountBalance").val(newCustomer.accountBalance.formatMoney());
+    if (depositAmount) {
+      customer.depositTransaction(depositAmount);
+    }
+
+    if (withdrawalAmount) {
+      customer.withdrawalTransaction(withdrawalAmount);
+    }
+
+    $("input#accountBalance").val(customer.accountBalance.formatMoney());
 
   });
 });

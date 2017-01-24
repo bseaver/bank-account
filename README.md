@@ -42,10 +42,11 @@ Follow Bank Account lab with business logic using classes and multiple object da
 |:---------------|:-------------:|---------------:|
 |1) register account| "John", 0 | $0.0 |
 |2) register initial balance | "John", 100.33 | $100.33 |
-|3) deposit amount | 250.00 | $350.33 |
-|4) withdraw amount | 1000.00 | ($649.67) |
-|5) deposit and withdrawal | 1000.00 -20.00 | $330.33|
+|3) deposit | IB=$100.33, $250.00 | $350.33 |
+|4) withdraw  | IB=$350.33, $1000.00 | ($649.67) |
+|5) deposit and withdrawal | IB=($649.67) 1000.00 -20.00 | $330.33|
 |6) non numeric input is rejected | "banana" | "please enter a numeric number" or other response. |
 |7) negative balances show up in red | -649 | ($649) in red |
+
 
 * End specifications
