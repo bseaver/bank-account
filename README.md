@@ -14,6 +14,7 @@ Follow Bank Account lab with business logic using classes and multiple object da
 
 ## See this page on GitHub.io
 [https://bseaver.github.io/bank-account/](https://bseaver.github.io/bank-account/)
+
 [https://elmunoz42.github.io/bank-account/](https://elmunoz42.github.io/bank-account/)
 
 ## Known Bugs
