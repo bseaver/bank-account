@@ -1,1 +1,4 @@
-/* Empty Styles for now */
+.shadeBox {
+  background-color: lightgrey;
+  border: 1px solid darkblue;
+}

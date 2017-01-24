@@ -11,6 +11,40 @@
     <div class="container">
       <h2>Epicodus Credit Union</h2>
 
+      <form>
+        <div class="row">
+          <div class="col-md-5 shadeBox">
+            <h4>Register a new account:</h4>
+            <div class="form-group">
+              <label for="customerName"> Name: </label>
+              <input type="text" id="customerName" class="form-control" >
+              <label for="openingBalance"> Opening Balance: </label>
+              <input type="text" id="openingBalance" class="form-control">
+            </div>
+            <!-- form-group -->
+          </div>
+          <!-- shadeBox -->
+          <div class="col-md-5 shadeBox">
+            <h4>Deposit or withdraw funds:</h4>
+
+          </div>
+
+        </div>
+
+        <div class="row">
+          <div class="col-md-10 shadeBox">
+            <h5>Current Balance:</h5>
+            <div class="form-group">
+              <label for="accountBalance"> Account Balance:</label>
+              <input type="button" id="accountBalance" class="form-control" readonly>
+            </div>
+            <!-- account balance -->
+          </div>
+        </div>
+
+        <button type="submit" class="btn">Submit</button>
+      </form>
+
     </div>
   </body>
 </html>
