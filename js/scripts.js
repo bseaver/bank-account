@@ -69,5 +69,10 @@ $(document).ready(function() {
 
     $("input#accountBalance").val(customer.accountBalance.formatMoney());
 
+    $("input#openingBalance").val("");
+    $("input#depositAmount").val("");
+    $("input#withdrawalAmount").val("");
+
+
   });
 });
